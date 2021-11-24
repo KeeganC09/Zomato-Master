@@ -13,5 +13,5 @@ export {
     OrderModel,
     RestaurantModel,
     ReviewModel,
-    UserModel,
+    UserModel
 };
