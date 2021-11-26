@@ -40,7 +40,7 @@ Router.get('/list/:_id', async (req, res) => {
 Router.get('/image/:_id', async (req, res) => {
     try {
         const { _id } = req.params;
-        const menuImages = await ImageModel.findById(_id);
+        const menuImages = await ImageModel.findOne(_id);
 
         if (!menuImages) {
             return res.status(404).json({ error: "Menu not found for this restaurant" });
