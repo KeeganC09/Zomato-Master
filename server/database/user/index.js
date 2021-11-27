@@ -1,3 +1,4 @@
+require('dotenv').config();
 import mongoose from "mongoose";
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
@@ -16,7 +17,7 @@ const UserSchema = new mongoose.Schema(
 );
 
 UserSchema.methods.generateJwtToken = function () {
-    return jwt.sign({ user: this._id.toString() }, "ZomatoAPP");
+    return jwt.sign({ user: this._id.toString() }, process.env.SECRET_KEY);
 }
 
 UserSchema.statics.findByEmailAndPhone = async ({ email, phoneNumber }) => {
