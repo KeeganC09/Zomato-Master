@@ -1,12 +1,16 @@
 import './App.css';
 
+// HOC Imports
+import HomeLayoutHoc from './HOC/Home.hoc';
+
+//Pages
+import HomePage from './pages/HomePage';
+
 function App() {
   return (
-    <div className="divide-y divide-teal-400 md:divide-pink-400">
-      <div className="py-2">1</div>
-      <div className="py-2">2</div>
-      <div className="py-2">3</div>
-    </div>
+    <>
+      <HomeLayoutHoc component={HomePage} path="/" />
+    </>
   );
 }
 
